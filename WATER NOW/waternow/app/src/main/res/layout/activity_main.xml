@@ -8,32 +8,32 @@
     android:background="#00bfff"
     tools:context="app.example.waternow.MainActivity">
 
-   <LinearLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-       <include
-           layout="@layout/main_toolbar"/>
+        <include layout="@layout/main_toolbar" />
 
-       <Button
-           android:id="@+id/btnTest"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="Button" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Home"
+            android:textColor="@color/black"
+            android:textSize="52sp"
+            android:textStyle="bold" />
 
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:text="Home"
-           android:textColor="@color/black"
-           android:textSize="52sp"
-           android:textStyle="bold"
-           android:gravity="center"
-           />
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Entrar com Google" />
 
 
-   </LinearLayout>
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="300dp"

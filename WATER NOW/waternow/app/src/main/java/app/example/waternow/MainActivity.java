@@ -15,13 +15,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import app.example.waternow.R;
-
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
 import com.firebase.ui.auth.IdpResponse;
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
-import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -43,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         drawerLayout = findViewById(R.id.drawer);
         System.out.println("começa");
-        ((Button) findViewById(R.id.btnTest)).setOnClickListener(e -> {
+        ((Button) findViewById(R.id.btnLogin)).setOnClickListener(e -> {
             List<AuthUI.IdpConfig> providers = Arrays.asList(new AuthUI.IdpConfig.GoogleBuilder().build());
             Intent signInIntent = AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).build();
             signInLauncher.launch(signInIntent);

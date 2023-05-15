@@ -2,12 +2,11 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer"
-    android:background="#00bfff"
+    android:background="@color/bg"
     tools:context="app.example.waternow.MainActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Home"
+            android:text="@string/main_oi"
             android:textColor="@color/black"
             android:textSize="52sp"
             android:textStyle="bold" />
@@ -32,18 +31,23 @@
             android:layout_gravity="center"
             android:text="Entrar com Google" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ou criar uma Conta:" />
+
 
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:background="@color/white"
         android:layout_gravity="start"
-        >
+        android:background="@color/white">
 
-        <include
-            layout="@layout/main_navigation_drawer"/>
+
+        <include layout="@layout/main_navigation_drawer"/>
 
     </RelativeLayout>
 

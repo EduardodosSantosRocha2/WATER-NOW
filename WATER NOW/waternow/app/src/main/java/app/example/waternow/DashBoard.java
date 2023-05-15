@@ -6,6 +6,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseUser;
+
 import app.example.waternow.R;
 
 public class DashBoard extends AppCompatActivity {
@@ -15,9 +17,7 @@ public class DashBoard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
-
         drawerLayout=findViewById(R.id.drawer_layout);
-
     }
 
     public void ClickMenu(View view){

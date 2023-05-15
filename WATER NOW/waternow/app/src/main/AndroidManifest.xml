@@ -17,28 +17,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NavigationDrawer">
         <activity
-            android:name="app.example.waternow.Configuracoes"
+            android:name=".CriarConta"
             android:exported="false" />
         <activity
-            android:name="app.example.waternow.Metas"
+            android:name=".Configuracoes"
             android:exported="false" />
         <activity
-            android:name="app.example.waternow.Relatorio"
+            android:name=".Metas"
             android:exported="false" />
         <activity
-            android:name="app.example.waternow.Conta"
+            android:name=".Relatorio"
             android:exported="false" />
         <activity
-            android:name="app.example.waternow.Notificacao"
+            android:name=".Conta"
             android:exported="false" />
         <activity
-            android:name="app.example.waternow.AboutUs"
+            android:name=".Notificacao"
             android:exported="false" />
         <activity
-            android:name="app.example.waternow.DashBoard"
+            android:name=".AboutUs"
             android:exported="false" />
         <activity
-            android:name="app.example.waternow.MainActivity"
+            android:name=".DashBoard"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

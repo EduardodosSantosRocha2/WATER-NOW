@@ -26,37 +26,35 @@ import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    DrawerLayout drawerLayout;
-    private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(new FirebaseAuthUIActivityResultContract(), new ActivityResultCallback<FirebaseAuthUIAuthenticationResult>() {
-        @Override
-        public void onActivityResult(FirebaseAuthUIAuthenticationResult result) {
-            onSignInResult(result);
-        }
-    });
 
+    DrawerLayout drawerLayout;
+    private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(new FirebaseAuthUIActivityResultContract(), result -> onSignInResult(result));
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         drawerLayout = findViewById(R.id.drawer);
-        System.out.println("começa");
+
         ((Button) findViewById(R.id.btnLogin)).setOnClickListener(e -> {
             List<AuthUI.IdpConfig> providers = Arrays.asList(new AuthUI.IdpConfig.GoogleBuilder().build());
             Intent signInIntent = AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).build();
             signInLauncher.launch(signInIntent);
         });
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (user != null) {
+            redirectActivity(this, DashBoard.class);
+        }
     }
 
     private void onSignInResult(FirebaseAuthUIAuthenticationResult result) {
         IdpResponse response = result.getIdpResponse();
         if (result.getResultCode() == RESULT_OK) {
-            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-            Log.i("user", user.getDisplayName());
+            redirectActivity(this, DashBoard.class);
         } else {
-            Log.i("user", "nao deu certo");
+            Log.i("user", "erro no login");
         }
     }
-
 
     public void ClickMenu(View view) {
         openDrawer(drawerLayout);
@@ -114,16 +112,17 @@ public class MainActivity extends AppCompatActivity {
 
     public static void logout(Activity activity) {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-        builder.setTitle("Logout");
-        builder.setMessage("Are you sure you want to logout?");
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+        builder.setTitle("Sair");
+        builder.setMessage(activity.getString(R.string.mensagem_logout));
+        builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                activity.finishAffinity();
-                System.exit(0);
+                FirebaseAuth.getInstance().signOut();
+                redirectActivity(activity, MainActivity.class);
+//                System.exit(0);
             }
         });
-        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">WaterNow</string>
-
+    <string name="textUserName">Nome: %s</string>
+    <string name="textUserEmail">Email: %s</string>
+    <string name="mensagem_logout">Tem certeza que deseja sair?</string>
+    <string name="main_oi">Bem Vindo</string>
 </resources>

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00bfff"
+    android:background="@color/bg"
     android:orientation="vertical">
 
     <ImageView
@@ -32,8 +32,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00bfff"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:onClick="Clickhome"
         android:orientation="horizontal">
 
@@ -62,8 +61,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00bfff"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:onClick="Notification1"
         android:orientation="horizontal">
 
@@ -92,8 +90,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="#00bfff"
+        android:gravity="center"
         android:onClick="Conta1"
         android:orientation="horizontal">
 
@@ -121,8 +118,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="#00bfff"
+        android:gravity="center"
         android:onClick="Relatorio1"
         android:orientation="horizontal">
 
@@ -149,8 +145,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="#00bfff"
+        android:gravity="center"
         android:onClick="Metas1"
         android:orientation="horizontal">
 
@@ -177,8 +172,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="#00bfff"
+        android:gravity="center"
         android:onClick="Configuracoes1"
         android:orientation="horizontal">
 
@@ -207,8 +201,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="#00bfff"
+        android:gravity="center"
         android:onClick="clickDashboard"
         android:orientation="horizontal">
 
@@ -236,8 +229,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="#00bfff"
+        android:gravity="center"
         android:onClick="clickAboutUs"
         android:orientation="horizontal">
 
@@ -265,8 +257,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="#00bfff"
+        android:gravity="center"
         android:onClick="ClickLogout"
         android:orientation="horizontal">
 

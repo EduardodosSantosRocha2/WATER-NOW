@@ -5,6 +5,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -44,6 +45,7 @@ public class Conta extends AppCompatActivity {
             Drawable d = Drawable.createFromStream(is, "photo");
             return d;
         } catch (Exception e) {
+            Log.e("erro foto", e.getMessage());
             return null;
         }
     }

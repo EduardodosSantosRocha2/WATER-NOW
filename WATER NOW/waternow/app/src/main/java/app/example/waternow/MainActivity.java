@@ -40,8 +40,10 @@ public class MainActivity extends AppCompatActivity {
             Intent signInIntent = AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).build();
             signInLauncher.launch(signInIntent);
         });
+        ((Button) findViewById(R.id.btnCriarConta)).setOnClickListener(e -> {
+            redirectActivity(this, CriarConta.class);
+        });
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
         if (user != null) {
             redirectActivity(this, DashBoard.class);
         }

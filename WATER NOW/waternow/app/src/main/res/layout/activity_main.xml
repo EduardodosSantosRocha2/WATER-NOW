@@ -35,7 +35,14 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ou criar uma Conta:" />
+            android:text="ou"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <Button
+            android:id="@+id/btnCriarConta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Criar uma Conta" />
 
 
     </LinearLayout>

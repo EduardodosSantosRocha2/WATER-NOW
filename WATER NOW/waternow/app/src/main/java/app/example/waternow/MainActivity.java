@@ -1,6 +1,5 @@
 package app.example.waternow;
 
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -14,6 +13,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
@@ -35,14 +36,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         drawerLayout = findViewById(R.id.drawer);
 
-        ((Button) findViewById(R.id.btnLogin)).setOnClickListener(e -> {
+        ((Button) findViewById(R.id.btnLoginGoogle)).setOnClickListener(e -> {
             List<AuthUI.IdpConfig> providers = Arrays.asList(new AuthUI.IdpConfig.GoogleBuilder().build());
             Intent signInIntent = AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).build();
             signInLauncher.launch(signInIntent);
         });
+
         ((Button) findViewById(R.id.btnCriarConta)).setOnClickListener(e -> {
             redirectActivity(this, CriarConta.class);
         });
+
+        ((Button) findViewById(R.id.btnLogin)).setOnClickListener(e -> {
+            String userEmail = ((EditText) findViewById(R.id.inputEmail)).getText().toString();
+            String userPass = ((EditText) findViewById(R.id.inputSenha)).getText().toString();
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(userEmail, userPass).addOnCompleteListener(this,
+            task -> {
+                if (task.isSuccessful()) {
+                    redirectActivity(this, DashBoard.class);
+                } else {
+                    Toast.makeText(MainActivity.this, "Erro no login.",
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+        });
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             redirectActivity(this, DashBoard.class);

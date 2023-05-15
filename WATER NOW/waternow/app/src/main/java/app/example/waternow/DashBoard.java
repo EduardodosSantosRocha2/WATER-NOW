@@ -19,7 +19,9 @@ public class DashBoard extends AppCompatActivity {
         setContentView(R.layout.activity_dash_board);
         drawerLayout=findViewById(R.id.drawer_layout);
     }
-
+    public void Conta1(View view) {
+        MainActivity.redirectActivity(this, Conta.class);
+    }
     public void ClickMenu(View view){
         MainActivity.openDrawer(drawerLayout);
     }

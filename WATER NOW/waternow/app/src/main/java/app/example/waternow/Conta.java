@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,12 +31,15 @@ public class Conta extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user == null)
         {
-            MainActivity.redirectActivity(this,MainActivity.class);
+            MainActivity.redirectActivity(this, MainActivity.class);
         } else
         {
-            ((ImageView) findViewById(R.id.imgUserFoto)).setImageDrawable(carregarFotoUsuario(user.getPhotoUrl().toString()));
-            ((TextView) findViewById(R.id.textUserEmail)).setText(getString(R.string.textUserEmail, user.getEmail()));
+            Uri photoURL = user.getPhotoUrl();
+            if (photoURL != null)
+                ((ImageView) findViewById(R.id.imgUserFoto)).setImageDrawable(carregarFotoUsuario(user.getPhotoUrl().toString()));
+
             ((TextView) findViewById(R.id.textUserName)).setText(getString(R.string.textUserName, user.getDisplayName()));
+            ((TextView) findViewById(R.id.textUserEmail)).setText(getString(R.string.textUserEmail, user.getEmail()));
         }
     }
 

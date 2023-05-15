@@ -24,12 +24,71 @@
             android:textSize="52sp"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Entrar com Google" />
+            android:layout_margin="10dp"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="10dp">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Login:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email:" />
+
+            <EditText
+                android:id="@+id/inputEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Senha:" />
+
+            <EditText
+                android:id="@+id/inputSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Entrar" />
+
+                <Button
+                    android:id="@+id/btnCriarConta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Criar uma Conta" />
+
+            </LinearLayout>
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView"
@@ -39,10 +98,11 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <Button
-            android:id="@+id/btnCriarConta"
+            android:id="@+id/btnLoginGoogle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Criar uma Conta" />
+            android:layout_gravity="center"
+            android:text="Entrar com Google" />
 
 
     </LinearLayout>

@@ -15,14 +15,33 @@
 
         <include layout="@layout/main_toolbar" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="DashBoard"
-            android:textColor="@color/black"
-            android:textSize="50sp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="DashBoard"
+                android:textColor="@color/black"
+                android:textSize="50sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editQtdAgua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/btnAddAgua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Adicionar" />
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseUser;
 import java.io.InputStream;
 import java.net.URL;
 
+import android.content.Intent;
 import app.example.waternow.R;
 
 public class Conta extends AppCompatActivity {
@@ -52,6 +53,11 @@ public class Conta extends AppCompatActivity {
             Log.e("erro foto", e.getMessage());
             return null;
         }
+    }
+
+    public void Registrar(View view){
+        Intent intent = new Intent(this, CriarContaParte2.class);
+        startActivity(intent);
     }
 
     public void ClickMenu(View view){

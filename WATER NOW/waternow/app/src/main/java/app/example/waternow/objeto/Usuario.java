@@ -1,9 +1,28 @@
 package app.example.waternow.objeto;
 
-public class usuario {
+public class Usuario {
     public float peso;
     public float altura;
     public String sexo;
+    public String id;
+
+    public Usuario() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Usuario(float peso, float altura, String sexo, String id) {
+        this.peso = peso;
+        this.altura = altura;
+        this.sexo = sexo;
+        this.id = id;
+    }
 
     public float getPeso() {
         return peso;

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +17,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+
+import app.example.waternow.objeto.Usuario;
+
 public class DashBoard extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
@@ -27,16 +31,16 @@ public class DashBoard extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        Pessoa teste = new Pessoa(FirebaseAuth.getInstance().getCurrentUser().getUid(), "Joao Teste");
+        //Usuario teste = new Usuario(FirebaseAuth.getInstance().getCurrentUser().getUid(), "Joao Teste");
 
         ((Button)findViewById(R.id.btnAddAgua)).setOnClickListener((e) ->
         {
-            teste.agua = Double.parseDouble(((EditText) findViewById(R.id.editQtdAgua)).getText().toString());
+           // teste.agua = Double.parseDouble(((EditText) findViewById(R.id.editQtdAgua)).getText().toString());
 
-            db.collection("pessoa")
-                    .add(teste)
-                    .addOnSuccessListener(documentReference -> Log.d("a", "DocumentSnapshot written with ID: " + documentReference.getId()))
-                    .addOnFailureListener(e1 -> Log.w("a", "Error adding document", e1));
+//            db.collection("pessoa")
+//                    .add(teste)
+//                    .addOnSuccessListener(documentReference -> Log.d("a", "DocumentSnapshot written with ID: " + documentReference.getId()))
+//                    .addOnFailureListener(e1 -> Log.w("a", "Error adding document", e1));
         });
     }
     public void Conta1(View view) {
@@ -65,5 +69,10 @@ public class DashBoard extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         MainActivity.closeDrawer(drawerLayout);
+    }
+
+    public void redirecionar(View view){
+        Intent intent = new Intent(this, CriarContaParte2.class);
+        startActivity(intent);
     }
 }

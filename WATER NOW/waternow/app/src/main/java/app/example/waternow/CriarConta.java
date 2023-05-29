@@ -30,7 +30,7 @@ public class CriarConta extends AppCompatActivity {
                         Log.i("registro", userID + " registro OK");
                         // pegar mais informações sobre o usuario (peso, altura, etc...) e usar essa userID para enviar pro outro banco
 
-                        MainActivity.redirectActivity(this, DashBoard.class);
+                        MainActivity.redirectActivity(this, CriarContaParte2.class);
                     } else {
                         Log.i("registro", "erro no registro --" + task.getException());
                         Toast.makeText(CriarConta.this, "Erro na criação de conta.",

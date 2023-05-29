@@ -41,6 +41,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Adicionar" />
+            <Button
+                android:id="@+id/redirecionar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cadastrar"
+                android:onClick="redirecionar"/>
         </LinearLayout>
 
     </LinearLayout>

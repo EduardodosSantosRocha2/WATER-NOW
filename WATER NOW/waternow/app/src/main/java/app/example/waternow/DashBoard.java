@@ -32,7 +32,6 @@ public class DashBoard extends AppCompatActivity {
         ((Button)findViewById(R.id.btnAddAgua)).setOnClickListener((e) ->
         {
             teste.agua = Double.parseDouble(((EditText) findViewById(R.id.editQtdAgua)).getText().toString());
-
             db.collection("pessoa")
                     .add(teste)
                     .addOnSuccessListener(documentReference -> Log.d("a", "DocumentSnapshot written with ID: " + documentReference.getId()))

@@ -64,7 +64,7 @@ public class DashBoard extends AppCompatActivity {
         ((LinearLayout) findViewById(R.id.layoutListaAgua)).removeAllViews();
         for (Agua a: usuarioAtual.getAgua()) {
             TextView teste = new TextView(this);
-            teste.setText(String.format("Agua: %s \t Qtd: %.2f", df.format(a.getData()), a.getQuantidade()));
+            teste.setText(String.format("Agua: %s \t Qtd: %.2f \t Peso: %.2f ", df.format(a.getData()), a.getQuantidade(),usuarioAtual.getPeso()));
             ((LinearLayout) findViewById(R.id.layoutListaAgua)).addView(teste);
         }
     }
@@ -79,32 +79,36 @@ public class DashBoard extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show());
     }
 
-    public void Conta1(View view) {
-        MainActivity.redirectActivity(this, Conta.class);
-    }
-
-    public void ClickMenu(View view) {
+    public void ClickMenu(View view){
         MainActivity.openDrawer(drawerLayout);
     }
-
-    public void ClickLogo(View view) {
+    public void ClickLogo(View view){
         MainActivity.closeDrawer(drawerLayout);
     }
-
-    public void Clickhome(View view) {
-        MainActivity.redirectActivity(this, MainActivity.class);
+    public  void Clickhome(View view){
+        MainActivity.redirectActivity(this,MainActivity.class);
     }
-
-    public void clickDashboard(View view) {
+    public  void clickDashboard(View view){
         recreate();
     }
-
-    public void clickAboutUs(View view) {
-        MainActivity.redirectActivity(this, AboutUs.class);
+    public void clickAboutUs(View view){
+        MainActivity.redirectActivity(this,AboutUs.class);
+    }
+    public  void ClickLogout(View view){
+        MainActivity.logout(this);
     }
 
-    public void ClickLogout(View view) {
-        MainActivity.logout(this);
+    public void Conta1(View view){
+        MainActivity.redirectActivity(this,Conta.class);
+    }
+    public void Relatorio1(View view){MainActivity.redirectActivity(this,Relatorio.class);}
+    public void Metas1(View view){
+        MainActivity.redirectActivity(this,Metas.class);
+    }
+
+    public void Configuracoes1(View view){MainActivity.redirectActivity(this,Configuracoes.class);}
+    public void Notification1(View view) {
+        MainActivity.redirectActivity(this, Notificacao.class);
     }
 
     @Override

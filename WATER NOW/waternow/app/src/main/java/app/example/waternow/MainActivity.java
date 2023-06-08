@@ -22,19 +22,24 @@ import com.firebase.ui.auth.IdpResponse;
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Arrays;
 import java.util.List;
 
+import app.example.waternow.objeto.Usuario;
+
 public class MainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
+    private FirebaseFirestore db;
     private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(new FirebaseAuthUIActivityResultContract(), result -> onSignInResult(result));
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         drawerLayout = findViewById(R.id.drawer);
+        db = FirebaseFirestore.getInstance();
 
         ((Button) findViewById(R.id.btnLoginGoogle)).setOnClickListener(e -> {
             List<AuthUI.IdpConfig> providers = Arrays.asList(new AuthUI.IdpConfig.GoogleBuilder().build());
@@ -69,7 +74,15 @@ public class MainActivity extends AppCompatActivity {
     private void onSignInResult(FirebaseAuthUIAuthenticationResult result) {
         IdpResponse response = result.getIdpResponse();
         if (result.getResultCode() == RESULT_OK) {
-            redirectActivity(this, DashBoard.class);
+            db.collection(Usuario.END_FIREBASE).document(FirebaseAuth.getInstance().getUid()).get().addOnCompleteListener((e) -> {
+                if (e.isSuccessful())
+                {
+                    if (e.getResult().exists())
+                        redirectActivity(this, DashBoard.class);
+                    else
+                        redirectActivity(this, CriarContaParte2.class);
+                }
+            });
         } else {
             Log.i("user", "erro no login");
         }

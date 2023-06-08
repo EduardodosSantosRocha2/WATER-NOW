@@ -45,8 +45,8 @@ public class DashBoard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
         drawerLayout = findViewById(R.id.drawer_layout);
-
         db = FirebaseFirestore.getInstance();
+
         DocumentReference usuarioDB = db.collection(Usuario.END_FIREBASE).document(FirebaseAuth.getInstance().getUid());
         usuarioDB.get().addOnCompleteListener((a) -> {
             if (a.isSuccessful()) {

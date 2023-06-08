@@ -21,8 +21,8 @@ public class CriarConta extends AppCompatActivity {
     }
 
     private void RegistrarUsuario() {
-        String userEmail = ((EditText)findViewById(R.id.inputEmail)).getText().toString();
-        String pass = ((EditText)findViewById(R.id.inputSenha)).getText().toString();
+        String userEmail = ((EditText) findViewById(R.id.inputEmail)).getText().toString();
+        String pass = ((EditText) findViewById(R.id.inputSenha)).getText().toString();
         FirebaseAuth auth = FirebaseAuth.getInstance();
         auth.createUserWithEmailAndPassword(userEmail, pass).addOnCompleteListener(this,
                 task -> {

@@ -7,6 +7,11 @@
     android:layout_height="match_parent"
     android:background="@color/bg"
     tools:context="app.example.waternow.AboutUs">
+    <androidx.core.widget.NestedScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,18 +19,35 @@
         android:orientation="vertical">
 
         <include layout="@layout/main_toolbar" />
+        <TextView
+            android:id="@+id/TextSobre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:padding="15dp"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:text="@string/sobrenos"
+            />
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="347dp"
+            app:srcCompat="@drawable/profile" />
 
         <TextView
+            android:id="@+id/TexteSobre"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="About Us"
+            android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:textSize="50sp"
-            android:textStyle="bold" />
+            android:padding="15dp"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:text="@string/sobre"
+            />
 
     </LinearLayout>
-
+    </androidx.core.widget.NestedScrollView>
     <RelativeLayout
         android:layout_width="300dp"
         android:layout_height="match_parent"
@@ -33,7 +55,12 @@
         android:background="@color/white">
 
         <include layout="@layout/main_navigation_drawer" />
+
+
+
+
     </RelativeLayout>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
+

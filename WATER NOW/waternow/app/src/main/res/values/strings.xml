@@ -4,4 +4,8 @@
     <string name="textUserEmail">Email: %s</string>
     <string name="mensagem_logout">Tem certeza que deseja sair?</string>
     <string name="main_oi">Bem Vindo</string>
+
+    <string name="textUserAltura">Altura: %.2f</string>
+    <string name="textUserPeso">Peso: %.2f</string>
+    <string name="textUserSexo">Sexo: %s</string>
 </resources>

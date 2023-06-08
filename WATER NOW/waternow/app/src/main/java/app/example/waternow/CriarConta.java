@@ -17,7 +17,6 @@ public class CriarConta extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_criar_conta);
         ((Button) findViewById(R.id.btnLogin)).setOnClickListener((e) -> RegistrarUsuario());
-        ((Button) findViewById(R.id.btnCCL)).setOnClickListener((e) -> MainActivity.redirectActivity(this, MainActivity.class));
     }
 
     private void RegistrarUsuario() {

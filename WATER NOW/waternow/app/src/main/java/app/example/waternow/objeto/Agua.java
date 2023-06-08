@@ -1,40 +1,17 @@
 package app.example.waternow.objeto;
-import java.util.Date;
+import com.google.type.DateTime;
 
 public class Agua {
-    private String idUsuario;
-    private Date data;
-    private Float quantidade;
+    public String id_usuario;
+    public DateTime data;
+    public Float agua;
 
     public Agua() {
     }
 
-    public Agua(Date data, Float agua) {
+    public Agua(String id_usuario, DateTime data, Float agua) {
+        this.id_usuario = id_usuario;
         this.data = data;
-        this.quantidade = agua;
-    }
-
-    public String getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(String idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-
-    public Date getData() {
-        return data;
-    }
-
-    public void setData(Date data) {
-        this.data = data;
-    }
-
-    public Float getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(Float quantidade) {
-        this.quantidade = quantidade;
+        this.agua = agua;
     }
 }

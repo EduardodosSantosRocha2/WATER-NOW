@@ -1,28 +1,12 @@
 package app.example.waternow.objeto;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Usuario {
-    public static final String END_FIREBASE = "pessoa";
-
-    private List<Agua> agua;
     public float peso;
     public float altura;
     public String sexo;
     public String id;
 
     public Usuario() {
-        agua = new ArrayList<>();
-    }
-
-    public List<Agua> getAgua() {
-        return agua;
-    }
-
-    public void addAgua(Agua a) {
-        a.setIdUsuario(id);
-        agua.add(a);
     }
 
     public String getId() {
@@ -34,7 +18,6 @@ public class Usuario {
     }
 
     public Usuario(float peso, float altura, String sexo, String id) {
-        super();
         this.peso = peso;
         this.altura = altura;
         this.sexo = sexo;

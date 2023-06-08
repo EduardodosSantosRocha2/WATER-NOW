@@ -6,4 +6,7 @@
     <string name="main_oi">Bem Vindo</string>
     <string name="sobrenos">About us</string>
     <string name="sobre">Nós estudantes da UFU desenvolvemos um app de agua, a fim de mostrar uma perspectiva fresca e criativa, procurando atender as necessidades e preferências dos usuarios.</string>
+    <string name="textUserAltura">Altura: %.2f</string>
+    <string name="textUserPeso">Peso: %.2f</string>
+    <string name="textUserSexo">Sexo: %s</string>
 </resources>

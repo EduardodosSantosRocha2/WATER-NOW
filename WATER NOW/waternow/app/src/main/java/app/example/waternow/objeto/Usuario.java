@@ -6,15 +6,13 @@ import java.util.List;
 public class Usuario {
     public static final String END_FIREBASE = "pessoa";
 
-    private List<Agua> agua;
+    private List<Agua> agua = new ArrayList<>();
     public float peso;
     public float altura;
     public String sexo;
     public String id;
 
-    public Usuario() {
-        agua = new ArrayList<>();
-    }
+    public Usuario() { }
 
     public List<Agua> getAgua() {
         return agua;

@@ -11,18 +11,31 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
+        android:orientation="vertical" >
         <include layout="@layout/main_toolbar" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Notificacao"
-            android:textColor="@color/black"
-            android:textSize="50sp"
-            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/horas1"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"/>
+
+
+
+        <EditText
+            android:id="@+id/minuto2"
+            android:layout_width="290dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
+
+        <Button
+            android:id="@+id/btnOpenClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Abrir Relógio"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 

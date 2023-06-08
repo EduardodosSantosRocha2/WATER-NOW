@@ -9,4 +9,8 @@
     <string name="textUserAltura">Altura: %.2f</string>
     <string name="textUserPeso">Peso: %.2f</string>
     <string name="textUserSexo">Sexo: %s</string>
+
+    <string name="channel_id">meu_channel_id</string>
+    <string name="channel_name">Nome do Canal</string>
+    <string name="channel_description">Descrição do Canal</string>
 </resources>

@@ -102,7 +102,7 @@ public class Metas extends AppCompatActivity {
         MainActivity.redirectActivity(this,Metas.class);
     }
 
-    public void Configuracoes1(View view){MainActivity.redirectActivity(this,Configuracoes.class);}
+    //public void Configuracoes1(View view){MainActivity.redirectActivity(this,Configuracoes.class);}
     public void Notification1(View view) {
         MainActivity.redirectActivity(this, Notificacao.class);
     }

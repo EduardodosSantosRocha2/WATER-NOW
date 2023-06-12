@@ -24,9 +24,6 @@
             android:name=".CriarConta"
             android:exported="false" />
         <activity
-            android:name=".Configuracoes"
-            android:exported="false" />
-        <activity
             android:name=".Metas"
             android:exported="false" />
         <activity

@@ -45,7 +45,7 @@ public class Relatorio extends AppCompatActivity {
         MainActivity.redirectActivity(this,Metas.class);
     }
 
-    public void Configuracoes1(View view){MainActivity.redirectActivity(this,Configuracoes.class);}
+    
 
     @Override
     protected void onPause() {

@@ -130,9 +130,7 @@ public class MainActivity extends AppCompatActivity {
         redirectActivity(this, Metas.class);
     }
 
-    public void Configuracoes1(View view) {
-        redirectActivity(this, Configuracoes.class);
-    }
+
 
     public void clickAboutUs(View view) {
         redirectActivity(this, AboutUs.class);
